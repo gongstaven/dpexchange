@@ -8,16 +8,15 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
-import java.io.Reader;
 import java.io.StringReader;
 import java.math.BigDecimal;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
@@ -25,18 +24,15 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
 
+@SuppressWarnings("serial")
 public class DpExchange extends JFrame implements ActionListener{
 
 	private JPanel panel,contentPane;
-	private JRadioButton jrb_1,jrb_2,jrb_3;
 	private JLabel jlabel_scale;
 	private JTextArea jta_1,jta_2;
+	private JComboBox jcb_1,jcb_2;
 	
-	private static final double SCALE_360 = 1.125;
-	private static final double SCALE_400 = 1.25;
-	private static final double SCALE_240 = 0.75;
-	
-	private double scale = SCALE_360;/** 转换比例，默认320-->360dp*/
+	private double scale = 1.0;/** 默认比利，240->240,1.0*/
 
 	/**
 	 * Launch the application.
@@ -135,31 +131,40 @@ public class DpExchange extends JFrame implements ActionListener{
 		JPanel panel_3 = new JPanel();
 		contentPane.add(panel_3, BorderLayout.CENTER);
 		
-		Font font_jrb = new Font("微软雅黑", Font.PLAIN, 15);
+		Font font_jrc = new Font("微软雅黑", Font.PLAIN, 15);
+		Dimension dimen_jrc = new Dimension(80, 30);
 		
-		jrb_1 = new JRadioButton("320 To 360");
-		jrb_1.setFont(font_jrb);
-		jrb_1.setForeground(Color.BLUE);
-		jrb_1.setSelected(true);
-		jrb_1.setActionCommand("1");
-		jrb_1.addActionListener(codeListener);
-		panel_3.add(jrb_1);
+		jcb_1 = new JComboBox();
+		jcb_1.addItem("240");
+		jcb_1.addItem("320");
+		jcb_1.addItem("360");
+		jcb_1.addItem("400");
+		jcb_1.setFont(font_jrc);
+		jcb_1.setForeground(Color.BLUE);
+		jcb_1.addActionListener(this);
+		jcb_1.setActionCommand("3");
+		jcb_1.setPreferredSize(dimen_jrc);
+		panel_3.add(jcb_1);
 		
-		jrb_2 = new JRadioButton("320 To 400");
-		jrb_2.setFont(font_jrb);
-		jrb_2.setForeground(Color.BLUE);
-		jrb_2.setActionCommand("2");
-		jrb_2.addActionListener(codeListener);
-		panel_3.add(jrb_2);
+		JLabel jl_to = new JLabel("TO");
+		jl_to.setFont(font_jrc);
+		jl_to.setForeground(Color.RED);
+		jl_to.setPreferredSize(dimen_jrc);
+		panel_3.add(jl_to);
 		
-		jrb_3 = new JRadioButton("320 To 240");
-		jrb_3.setFont(font_jrb);
-		jrb_3.setForeground(Color.BLUE);
-		jrb_3.setActionCommand("3");
-		jrb_3.addActionListener(codeListener);
-		panel_3.add(jrb_3);
+		jcb_2 = new JComboBox();
+		jcb_2.addItem("240");
+		jcb_2.addItem("320");
+		jcb_2.addItem("360");
+		jcb_2.addItem("400");
+		jcb_2.setFont(font_jrc);
+		jcb_2.setForeground(Color.BLUE);
+		jcb_2.addActionListener(this);
+		jcb_2.setActionCommand("4");
+		jcb_2.setPreferredSize(dimen_jrc);
+		panel_3.add(jcb_2);
 		
-		jlabel_scale = new JLabel("<html><center>比例<br>1.125</center></html>");
+		jlabel_scale = new JLabel("<html><center>比例<br>"+scale+"</center></html>");
 		jlabel_scale.setFont(new Font("微软雅黑", Font.BOLD, 20));
 		jlabel_scale.setForeground(Color.RED);
 		panel_3.add(jlabel_scale);
@@ -177,7 +182,10 @@ public class DpExchange extends JFrame implements ActionListener{
 			if(!ori.equals("")){
 				jta_2.setText(compute(ori));
 			}else{
-				JOptionPane.showMessageDialog(this, "内容不能为空", "提示", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(this
+						, "内容不能为空"
+						, "提示"
+						, JOptionPane.INFORMATION_MESSAGE);
 			}
 			break;
 		case 1:
@@ -185,6 +193,15 @@ public class DpExchange extends JFrame implements ActionListener{
 			break;
 		case 2:
 			jta_2.setText("");
+			break;
+		case 3:
+		case 4:
+			double sss = (Integer.valueOf(jcb_2.getSelectedItem().toString())+0.0) / Integer.valueOf(jcb_1.getSelectedItem().toString());
+			/** 保留三位小数点，四舍五入*/
+			BigDecimal bigDecimal = new BigDecimal(sss);
+			sss = bigDecimal.setScale(3, BigDecimal.ROUND_HALF_UP).doubleValue();
+			scale = sss;
+			jlabel_scale.setText("<html><center>比例<br>"+scale+"</center></html>");
 			break;
 		}
 	}
@@ -242,49 +259,5 @@ public class DpExchange extends JFrame implements ActionListener{
 		
 		return big.intValue();
 	}
-	
-	/**
-	 * JRadioButton监听事件
-	 */
-	public ActionListener codeListener = new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-			int type = Integer.parseInt(e.getActionCommand());
-			switch(type){
-			case 1:
-				jrb_1.setSelected(true);
-				jrb_2.setSelected(false);
-				jrb_3.setSelected(false);
-				
-				scale = SCALE_360;
-				
-				jlabel_scale.setText("<html><center>比例<br>1.125</center></html>");
-				
-				break;
-			case 2:
-				jrb_1.setSelected(false);
-				jrb_2.setSelected(true);
-				jrb_3.setSelected(false);
-				
-				scale = SCALE_400;
-				
-				jlabel_scale.setText("<html><center>比例<br>1.25</center></html>");
-				
-				break;
-			case 3:
-				jrb_1.setSelected(false);
-				jrb_2.setSelected(false);
-				jrb_3.setSelected(true);
-				
-				scale = SCALE_240;
-				
-				jlabel_scale.setText("<html><center>比例<br>0.75</center></html>");
-				
-				break;
-			}
-			
-			jta_2.setText("");
-			
-		}
-	};
 
 }
