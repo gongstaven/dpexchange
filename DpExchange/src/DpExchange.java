@@ -139,6 +139,9 @@ public class DpExchange extends JFrame implements ActionListener{
 		jcb_1.addItem("320");
 		jcb_1.addItem("360");
 		jcb_1.addItem("400");
+		jcb_1.addItem("600");
+		jcb_1.addItem("768");
+		jcb_1.addItem("800");
 		jcb_1.setFont(font_jrc);
 		jcb_1.setForeground(Color.BLUE);
 		jcb_1.addActionListener(this);
@@ -157,6 +160,9 @@ public class DpExchange extends JFrame implements ActionListener{
 		jcb_2.addItem("320");
 		jcb_2.addItem("360");
 		jcb_2.addItem("400");
+		jcb_2.addItem("600");
+		jcb_2.addItem("768");
+		jcb_2.addItem("800");
 		jcb_2.setFont(font_jrc);
 		jcb_2.setForeground(Color.BLUE);
 		jcb_2.addActionListener(this);
