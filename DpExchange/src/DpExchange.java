@@ -239,7 +239,13 @@ public class DpExchange extends JFrame implements ActionListener{
 					
 					sb.append(tmpStr+"\n");
 					
-				}else{
+				}else if(line.contains("<!--")){
+					if(line.contains(jcb_1.getSelectedItem().toString())){
+						tmpStr = line.replace(jcb_1.getSelectedItem().toString()
+								, jcb_2.getSelectedItem().toString());
+					}
+					sb.append(tmpStr+"\n");
+				}else {
 					sb.append(line+"\n");
 				}
 			}
