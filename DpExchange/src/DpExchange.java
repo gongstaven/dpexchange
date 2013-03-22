@@ -37,7 +37,12 @@ public class DpExchange extends JFrame implements ActionListener{
 	/** 参数列表 - dp值*/
 	private String[] valuesList = {"240","320","360"
 			,"400","480","600","640","682","768","800"};
+	
+	private static final String TITLE_TXT = "Android DEV dp Exchange Tool -Version 20130322";
 
+	private static final String FONT_DEFAULT = "微软雅黑";
+	
+	private static final String COPYRIGHT = "Copyright © Staven.Mobile. 2010-2013";
 	/**
 	 * Launch the application.
 	 */
@@ -65,7 +70,7 @@ public class DpExchange extends JFrame implements ActionListener{
 	 * Create the frame.
 	 */
 	public DpExchange() {
-		setTitle("dp转换工具");
+		setTitle(TITLE_TXT);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 350);
 		setResizable(false);
@@ -81,8 +86,8 @@ public class DpExchange extends JFrame implements ActionListener{
 		panel.add(contentPane, BorderLayout.CENTER);
 		
 		JPanel jp_right = new JPanel();
-		JLabel jl_right = new JLabel("Copyright © Staven.Mobile. 2010-2012");
-		jl_right.setFont(new Font("微软雅黑", Font.PLAIN, 10));
+		JLabel jl_right = new JLabel(COPYRIGHT);
+		jl_right.setFont(new Font(FONT_DEFAULT, Font.PLAIN, 10));
 		jl_right.setForeground(Color.WHITE);
 		jp_right.add(jl_right, BorderLayout.CENTER);
 		jp_right.setBackground(Color.BLACK);
@@ -109,22 +114,24 @@ public class DpExchange extends JFrame implements ActionListener{
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2, BorderLayout.SOUTH);
 		
+		Font font_fun_btn = new Font(FONT_DEFAULT, Font.BOLD, 20);
+		
 		JButton jb_cls_1= new JButton("↑-清空");
-		jb_cls_1.setFont(new Font("微软雅黑", Font.BOLD, 20));
+		jb_cls_1.setFont(font_fun_btn);
 		jb_cls_1.setForeground(Color.GREEN);
 		jb_cls_1.setActionCommand("1");
 		jb_cls_1.addActionListener(this);
 		panel_2.add(jb_cls_1);
 		
 		JButton jb_do = new JButton("转换");
-		jb_do.setFont(new Font("微软雅黑", Font.BOLD, 20));
+		jb_do.setFont(font_fun_btn);
 		jb_do.setForeground(Color.BLUE);
 		jb_do.setActionCommand("0");
 		jb_do.addActionListener(this);
 		panel_2.add(jb_do);
 		
 		JButton jb_cls_2 = new JButton("清空-↑");
-		jb_cls_2.setFont(new Font("微软雅黑", Font.BOLD, 20));
+		jb_cls_2.setFont(font_fun_btn);
 		jb_cls_2.setForeground(Color.GREEN);
 		jb_cls_2.setActionCommand("2");
 		jb_cls_2.addActionListener(this);
@@ -135,7 +142,7 @@ public class DpExchange extends JFrame implements ActionListener{
 		JPanel panel_3 = new JPanel();
 		contentPane.add(panel_3, BorderLayout.CENTER);
 		
-		Font font_jrc = new Font("微软雅黑", Font.PLAIN, 15);
+		Font font_jrc = new Font(FONT_DEFAULT, Font.PLAIN, 15);
 		Dimension dimen_jrc = new Dimension(80, 30);
 		
 		jcb_1 = new JComboBox();
@@ -167,7 +174,7 @@ public class DpExchange extends JFrame implements ActionListener{
 		panel_3.add(jcb_2);
 		
 		jlabel_scale = new JLabel("<html><center>比例<br>"+scale+"</center></html>");
-		jlabel_scale.setFont(new Font("微软雅黑", Font.BOLD, 20));
+		jlabel_scale.setFont(new Font(FONT_DEFAULT, Font.BOLD, 20));
 		jlabel_scale.setForeground(Color.RED);
 		panel_3.add(jlabel_scale);
 		
