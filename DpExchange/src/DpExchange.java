@@ -33,6 +33,10 @@ public class DpExchange extends JFrame implements ActionListener{
 	private JComboBox jcb_1,jcb_2;
 	
 	private double scale = 1.0;/** 默认比利，240->240,1.0*/
+	
+	/** 参数列表 - dp值*/
+	private String[] valuesList = {"240","320","360"
+			,"400","480","600","640","682","768","800"};
 
 	/**
 	 * Launch the application.
@@ -135,13 +139,9 @@ public class DpExchange extends JFrame implements ActionListener{
 		Dimension dimen_jrc = new Dimension(80, 30);
 		
 		jcb_1 = new JComboBox();
-		jcb_1.addItem("240");
-		jcb_1.addItem("320");
-		jcb_1.addItem("360");
-		jcb_1.addItem("400");
-		jcb_1.addItem("600");
-		jcb_1.addItem("768");
-		jcb_1.addItem("800");
+		for(int i=0;i<valuesList.length;i++){
+			jcb_1.addItem(valuesList[i]);
+		}
 		jcb_1.setFont(font_jrc);
 		jcb_1.setForeground(Color.BLUE);
 		jcb_1.addActionListener(this);
@@ -156,13 +156,9 @@ public class DpExchange extends JFrame implements ActionListener{
 		panel_3.add(jl_to);
 		
 		jcb_2 = new JComboBox();
-		jcb_2.addItem("240");
-		jcb_2.addItem("320");
-		jcb_2.addItem("360");
-		jcb_2.addItem("400");
-		jcb_2.addItem("600");
-		jcb_2.addItem("768");
-		jcb_2.addItem("800");
+		for(int i=0;i<valuesList.length;i++){
+			jcb_2.addItem(valuesList[i]);
+		}
 		jcb_2.setFont(font_jrc);
 		jcb_2.setForeground(Color.BLUE);
 		jcb_2.addActionListener(this);
