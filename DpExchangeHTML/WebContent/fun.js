@@ -11,7 +11,7 @@ function getScaleSize() {
 	scale = scale.toFixed(2);
 	document.getElementById('scale_value').innerHTML = "Scale: "+scale;
 }
-
+//计算结果
 function compute() {
 	var instr = document.getElementById('str_in').value;
 	var lines = instr.split('\n');
@@ -42,6 +42,15 @@ function compute() {
 	document.getElementById('str_out').value = sb;
 }
 
+function clearTAin(){
+	document.getElementById("str_in").value = "";
+}
+
+function clearTAout(){
+	document.getElementById("str_out").value = "";
+}
+
+//两个TextArea同步滚动
 $(function() {
     var $tb1 = $('textarea[id$=str_in]');
     var $tb2 = $('textarea[id$=str_out]');

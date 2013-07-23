@@ -51,6 +51,16 @@ body {
 	margin: 10px;
 }
 
+#btn_edit{
+	color: #00a2e8;
+	background-color: #FFF;
+	font-family: 微软雅黑;
+	font-size:16px;
+	height: 30px;
+	width: 80px;
+	margin: 10px;
+}
+
 #footer {
 	background: #00a2e0;
 	color: #FFF;

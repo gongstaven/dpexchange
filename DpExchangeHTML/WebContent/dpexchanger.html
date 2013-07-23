@@ -2,13 +2,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>DpExchanger HTML version.</title>
+<title>Android dimen 缩放转换工具</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
-<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js" ></script>
-<script type="text/javascript" src="fun.js" ></script>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="fun.js"></script>
 </head>
 <body>
-	<div id="title">Android dp 转换工具</div>
+	<div id="title">Android dimen 缩放转换工具</div>
 	<div id="edit_area">
 		<table border="0">
 			<tr>
@@ -16,6 +17,12 @@
 						placeholder="请在这里，粘贴代码"></textarea></th>
 				<th><textarea id="str_out" class="text_area"
 						placeholder="这里显示，转换后的代码"></textarea></th>
+			</tr>
+			<tr>
+				<th><input type="button" value="清空" id="btn_edit"
+					onclick="clearTAin()" /></th>
+				<th><input type="button" value="清空" id="btn_edit"
+					onclick="clearTAout()" /></th>
 			</tr>
 			<tr>
 				<th>From: <select class="list_value" id="list_from"
@@ -42,8 +49,7 @@
 						<option value="682">682</option>
 						<option value="768">768</option>
 						<option value="800">800</option>
-				</select>
-				<a id="scale_value">Scale: 1</a>
+				</select> <a id="scale_value">Scale: 1</a>
 				</th>
 				<th><input type="button" value="转换" id="btn_do"
 					onclick="compute()" /></th>
@@ -51,7 +57,8 @@
 		</table>
 	</div>
 	<div id="footer">
-		Copyright © 2010-2013. <a href="http://www.staven.mobi" target="_blank">Staven.Mobile</a>
+		Copyright © 2010-2013. <a href="http://www.staven.mobi"
+			target="_blank">Staven.Mobile</a>
 	</div>
 </body>
 </html>
