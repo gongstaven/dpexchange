@@ -41,3 +41,11 @@ function compute() {
 	}
 	document.getElementById('str_out').value = sb;
 }
+
+$(function() {
+    var $tb1 = $('textarea[id$=str_in]');
+    var $tb2 = $('textarea[id$=str_out]');
+    $tb1.scroll(function() {
+        $tb2.scrollTop($tb1.scrollTop());
+    });
+});

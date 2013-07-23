@@ -3,7 +3,7 @@
 	padding: 0;
 }
 
-body{
+body {
 	color: #00a2e8;
 	font-family: 微软雅黑;
 }
@@ -17,31 +17,31 @@ body{
 	font-style: normal;
 }
 
-#edit_area{
+#edit_area {
 	background: #FFF;
 	direction: ltr;
 	padding: 20dp;
 }
 
-.text_area{
+.text_area {
 	width: 280px;
 	height: 380px;
 	font-family: 微软雅黑;
 	font-size: 12sp;
 	color: #00a2e8;
 	float: left;
-	margin: 10dp;
 	resize: horizontal;
+	margin: 10dp;
 	margin-left: 10px;
 	margin-top: 10px;
 }
 
-.list_value{
+.list_value {
 	font-family: 微软雅黑;
-	color:red;
+	color: red;
 }
 
-#btn_do{
+#btn_do {
 	color: #FFF;
 	background-color: #00a2e8;
 	font-family: 微软雅黑;
@@ -51,7 +51,7 @@ body{
 	margin: 10px;
 }
 
-#footer{
+#footer {
 	background: #00a2e0;
 	color: #FFF;
 	font-size: 5px;
@@ -59,7 +59,8 @@ body{
 	padding: 10px;
 	margin-top: 10dp;
 }
-#footer a{
+
+#footer a {
 	color: #FFF;
 	text-decoration: none;
 }
