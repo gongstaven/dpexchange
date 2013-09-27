@@ -1,4 +1,4 @@
-* {
+﻿* {
 	margin: 0;
 	padding: 0;
 }
@@ -24,7 +24,7 @@ body {
 }
 
 .text_area {
-	width: 280px;
+	width: 400px;
 	height: 380px;
 	font-family: 微软雅黑;
 	font-size: 12sp;
