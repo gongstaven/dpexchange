@@ -38,11 +38,11 @@ public class DpExchange extends JFrame implements ActionListener {
 	private String[] valuesList = { "240", "320", "360", "400", "480", "600",
 			"640", "682", "768", "800" };
 
-	private static final String TITLE_TXT = "Android DEV dp Exchange Tool -Version 20130322";
+	private static final String TITLE_TXT = "Android DEV dp Exchange Tool -Version 20140318";
 
 	private static final String FONT_DEFAULT = "微软雅黑";
 
-	private static final String COPYRIGHT = "Copyright © Staven.Mobile. 2010-2013";
+	private static final String COPYRIGHT = "Copyright © Staven.Mobile. 2010-2014";
 
 	/**
 	 * Launch the application.
