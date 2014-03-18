@@ -33,6 +33,8 @@ function compute() {
 		} else if (line.indexOf("<!--") !== -1) {
 			if (line.indexOf(fromValue) !== -1) {
 				tmpStr = line.replace(fromValue, toValue);
+			}else{
+				tmpStr = line;
 			}
 			sb = sb + tmpStr + "\n";
 		} else {
