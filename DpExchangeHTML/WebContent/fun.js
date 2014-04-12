@@ -23,11 +23,11 @@ function compute() {
 			if (line.indexOf("dp") !== -1) {
 				tmpStr = line.substring(line.indexOf(">") + 1, line
 						.lastIndexOf("dp"));
-				tmpStr = line.replace(tmpStr, Math.round(tmpStr*scale));
+				tmpStr = line.replace(">"+tmpStr, ">"+Math.round(tmpStr*scale));
 			} else if (line.indexOf("sp") != -1) {
 				tmpStr = line.substring(line.indexOf(">") + 1, line
 						.lastIndexOf("sp"));
-				tmpStr = line.replace(tmpStr, Math.round(tmpStr*scale));
+				tmpStr = line.replace(">"+tmpStr, ">"+Math.round(tmpStr*scale));
 			}
 			sb = sb + tmpStr + "\n";
 		} else if (line.indexOf("<!--") !== -1) {

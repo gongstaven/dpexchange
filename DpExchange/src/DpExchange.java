@@ -239,13 +239,13 @@ public class DpExchange extends JFrame implements ActionListener {
 					if (line.contains("dp")) {
 						tmpStr = line.substring(line.indexOf(">") + 1,
 								line.lastIndexOf("dp"));
-						tmpStr = line.replace(tmpStr,
-								String.valueOf(toScaleSize(tmpStr)));
+						tmpStr = line.replace(">" + tmpStr,
+								">" + String.valueOf(toScaleSize(tmpStr)));
 					} else if (line.contains("sp")) {
 						tmpStr = line.substring(line.indexOf(">") + 1,
 								line.lastIndexOf("sp"));
-						tmpStr = line.replace(tmpStr,
-								String.valueOf(toScaleSize(tmpStr)));
+						tmpStr = line.replace(">" + tmpStr,
+								">" + String.valueOf(toScaleSize(tmpStr)));
 					}
 
 					sb.append(tmpStr + "\n");

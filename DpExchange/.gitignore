@@ -1,18 +1,9 @@
-<<<<<<< HEAD
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
-=======
 *.class
 
 # bin directory
 /bin
 
-# Package Files #
+# Package Files
 *.jar
 *.war
 *.ear
->>>>>>> ed7939f7123b21b25387dc3e342d4bfc5b154b5a
