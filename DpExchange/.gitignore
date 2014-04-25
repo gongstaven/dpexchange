@@ -3,7 +3,7 @@
 # bin directory
 /bin
 
-# Package Files #
+# Package Files
 *.jar
 *.war
 *.ear
