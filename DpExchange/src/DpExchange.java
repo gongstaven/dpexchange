@@ -35,10 +35,10 @@ public class DpExchange extends JFrame implements ActionListener {
 	/** 默认比利，240->240,1.0 */
 
 	/** 参数列表 - dp值 */
-	private String[] valuesList = { "240", "320", "360", "400", "480", "600",
+	private String[] valuesList = { "240", "320", "360", "400", "480", "540", "600",
 			"640", "682", "768", "800" };
 
-	private static final String TITLE_TXT = "Android DEV dp Exchange Tool -Version 20140318";
+	private static final String TITLE_TXT = "Android DEV dp Exchange Tool -Version 20140425";
 
 	private static final String FONT_DEFAULT = "微软雅黑";
 
