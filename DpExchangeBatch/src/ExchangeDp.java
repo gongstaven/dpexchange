@@ -23,12 +23,17 @@ public class ExchangeDp {
 	/**
 	 * ChatGame2 (Eclipse Ant Build)
 	 */
-	// private static final String RES_DIR = "/res/";
+	private static final String CODE_ROOT_DIR = "/";
 
 	/**
 	 * ChatGameAS (Android Studio Gradle Build)
 	 */
-	private static final String RES_DIR = "/ChatGame2/src/main/res/";
+	// private static final String CODE_ROOT_DIR = "/ChatGame2/src/main/";
+
+	/**
+	 * Resource Directory
+	 */
+	private static final String RES_DIR = CODE_ROOT_DIR + "res/";
 
 	/**
 	 * 主函数
@@ -51,7 +56,7 @@ public class ExchangeDp {
 			debug("\n错误！找不到项目根目录，退出！(" + dirProject + ")");
 			return;
 		}
-		File[] rootFiles = new File(dirProject).listFiles();
+		File[] rootFiles = new File(dirProject + CODE_ROOT_DIR).listFiles();
 		boolean isValid = false;
 		for (File f : rootFiles) {
 			if (f.getName().equals("res")) {
